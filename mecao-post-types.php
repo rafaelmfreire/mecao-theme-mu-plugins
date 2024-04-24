@@ -18,6 +18,24 @@ function mecao_post_types()
 		],
 		'menu_icon' => 'dashicons-list-view'
 	]);
+
+	register_post_type('competition', [
+		'supports' => ['title', 'editor', 'excerpt'],
+		'rewrite' => ['slug' => 'campeonatos'],
+		'has_archive' => true,
+		'public' => true,
+		'show_in_rest' => true,
+		'labels' => [
+			'name' => 'Campeonatos',
+			'add_new' => 'Adicionar novo campeonato',
+			'add_new_item' => 'Adicionar Novo Campeonato',
+			'edit_item' => 'Alterar Campeonato',
+			'all_items' => 'Todos os Campeonatos',
+			'singular_name' => 'Campeonato',
+			'search_items' => 'Buscar campeonatos'
+		],
+		'menu_icon' => 'dashicons-awards'
+	]);
 }
 
 add_action('init', 'mecao_post_types');
